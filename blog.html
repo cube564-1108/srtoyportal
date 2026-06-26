@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
     <div class="container topbar__inner">
       <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
       <div class="topbar__actions">
-        <a href="contractor-account.html" class="topbar__link">Войти в личный кабинет</a>
+        <a href="auth.html" class="topbar__link">Войти / Регистрация</a>
         <span class="topbar__divider"></span>
         <a href="#" class="topbar__link">Избранное</a>
       </div>
@@ -32,6 +32,7 @@
       <nav class="main-nav">
         <a href="index.html">Главная</a>
         <a href="projects.html">Проекты</a>
+        <a href="client.html">Клиентам</a>
         <a href="companies.html">Строительные компании</a>
         <a href="#">О портале</a>
         <a href="blog.html">Блог</a>
@@ -47,11 +48,8 @@
     <nav class="mobile-nav">
       <a href="index.html">Главная</a>
       <a href="projects.html">Проекты</a>
-      <a href="companies.html">Строительные компании</a>
-      <a href="#">О портале</a>
-      <a href="blog.html">Блог</a>
-      <a href="#" class="button button--secondary">Добавить проект</a>
-      <a href="contractor-account.html" class="mobile-nav__link">Войти в личный кабинет</a>
+      <a href="client.html">Клиентам</a>
+      <a href="auth.html" class="mobile-nav__link">Войти / Регистрация</a>
       <a href="#" class="mobile-nav__link">Избранное</a>
     </nav>
   </div>
@@ -69,10 +67,12 @@
       <div class="container">
         <div class="news-grid">
           <article class="news-card">
-            <div class="news-card__image"></div>
+            <div class="news-card__image">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Строительные материалы для частного дома" />
+            </div>
             <div class="news-card__content">
               <span class="news-card__date">12 июня</span>
-              <a href="#" class="news-card__title">Лучшие материалы для частного дома в 2026 году</a>
+              <a href="blog-materials.html" class="news-card__title">Лучшие материалы для частного дома в 2026 году</a>
               <p>Обзор актуальных строительных материалов, которые позволяют сэкономить и сохранить качество.</p>
             </div>
           </article>
@@ -136,3 +136,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

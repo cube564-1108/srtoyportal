@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стройпортал — Регистрация</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
+      <div class="topbar__actions">
+        <a href="#" class="topbar__link">Избранное</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="client.html">Клиентам</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+      <div class="header-actions">
+        <a href="auth.html" class="button button--primary">Вход / Регистрация</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--white">
+      <div class="container auth-panel auth-panel--wide">
+        <div class="auth-card auth-card--split">
+          <div>
+            <h2>Регистрация клиента</h2>
+            <form>
+              <label>ФИО<input type="text" placeholder="Иван Иванов" /></label>
+              <label>Телефон<input type="tel" placeholder="+7 (___) ___-__-__" /></label>
+              <label>E-mail<input type="email" placeholder="example@mail.ru" /></label>
+              <label>Пароль<input type="password" placeholder="Придумайте пароль" /></label>
+              <button type="submit" class="button button--primary">Зарегистрироваться</button>
+            </form>
+          </div>
+          <div>
+            <h2>Регистрация строителя</h2>
+            <form>
+              <label>Название компании<input type="text" placeholder="ООО СтройГрад" /></label>
+              <label>Контактное лицо<input type="text" placeholder="Петров Петр" /></label>
+              <label>Телефон<input type="tel" placeholder="+7 (___) ___-__-__" /></label>
+              <label>E-mail<input type="email" placeholder="company@mail.ru" /></label>
+              <label>Пароль<input type="password" placeholder="Придумайте пароль" /></label>
+              <button type="submit" class="button button--secondary">Зарегистрироваться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+          <span class="footer-logo__symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <strong>Строй</strong>портал
+        </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="client.html">Клиентам</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+        <a href="#" class="button button--outline">Возникли вопросы?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

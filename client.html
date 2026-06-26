@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стройпортал — для клиентов</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
+      <div class="topbar__actions">
+        <a href="auth.html" class="topbar__link">Войти / Регистрация</a>
+        <span class="topbar__divider"></span>
+        <a href="#" class="topbar__link">Избранное</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="client.html">Клиентам</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#add-project" class="button button--primary">Добавить проект</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="client.html">Клиентам</a>
+      <a href="companies.html">Строительные компании</a>
+      <a href="#">О портале</a>
+      <a href="blog.html">Блог</a>
+      <a href="#" class="button button--secondary">Добавить проект</a>
+      <a href="auth.html" class="mobile-nav__link">Войти / Регистрация</a>
+      <a href="#" class="mobile-nav__link">Избранное</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Для клиентов</p>
+          <h1>Найдите идеальный проект и надёжного подрядчика</h1>
+          <p class="hero__text">Мы помогаем заказчикам выбирать строительные компании, сравнивать цены и запускать проекты быстро и безопасно.</p>
+          <div class="hero__buttons">
+            <a href="projects.html" class="button button--primary">Посмотреть проекты</a>
+            <a href="#client-benefits" class="button button--secondary">Преимущества</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="client-benefits">
+      <div class="container">
+        <div class="section__heading">
+          <h2>Почему выбирают нас</h2>
+          <p>Удобный поиск проектов, проверенные подрядчики и прозрачные условия работы для каждого клиента.</p>
+        </div>
+        <div class="cards cards--3">
+          <article class="feature-card">
+            <div class="feature-card__icon">🔍</div>
+            <h3>Простота поиска</h3>
+            <p>Быстро найдите проекты по типу, бюджету и региону.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🤝</div>
+            <h3>Проверенные подрядчики</h3>
+            <p>Мы показываем только надёжные компании с отзывами и рейтингом.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">🛡</div>
+            <h3>Безопасные сделки</h3>
+            <p>Защита заказчика, прозрачные условия и контроль качества.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__header">
+          <h2>Как начать</h2>
+        </div>
+        <div class="cards cards--3">
+          <article class="feature-card">
+            <div class="feature-card__icon">1️⃣</div>
+            <h3>Выберите проект</h3>
+            <p>Ознакомьтесь с доступными предложениями и найдите подходящий вариант.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">2️⃣</div>
+            <h3>Свяжитесь с подрядчиком</h3>
+            <p>Отправьте заявку и обсудите условия работы.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">3️⃣</div>
+            <h3>Запустите проект</h3>
+            <p>Соблюдайте сроки и контролируйте выполнение через портал.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+          <span class="footer-logo__symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <strong>Строй</strong>портал
+        </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="client.html">Клиентам</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+        <a href="#" class="button button--outline">Возникли вопросы?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
