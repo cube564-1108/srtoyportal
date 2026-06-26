@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Админка — Стройпортал</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Управление проектами — админка</div>
+      <div class="topbar__actions">
+        <a href="auth.html" class="topbar__link">Выйти</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="admin.html">Админка</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html" class="button button--primary">Перейти на сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section--white">
+      <div class="container">
+        <div class="breadcrumb">Главная &gt; <strong>Админка</strong></div>
+        <h1>Кабинет администратора</h1>
+        <p class="section__text">Добавляйте новые проекты, которые станут доступны клиентам и строителям.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container admin-panel">
+        <div class="admin-card">
+          <h2>Новый проект</h2>
+          <form id="projectForm" class="auth-form admin-form">
+            <div class="form-group">
+              <label>Название проекта</label>
+              <input id="projectTitle" type="text" placeholder="Например, Загородный дом в Зельцовке" required />
+            </div>
+            <div class="form-group">
+              <label>Тип проекта</label>
+              <select id="projectType">
+                <option>Жилой дом</option>
+                <option>Таунхаус</option>
+                <option>Коттедж</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Площадь</label>
+              <input id="projectArea" type="text" placeholder="120 м²" required />
+            </div>
+            <div class="form-group">
+              <label>Цена</label>
+              <input id="projectPrice" type="text" placeholder="от 3 000 000 руб." required />
+            </div>
+            <div class="form-group">
+              <label>Город</label>
+              <input id="projectCity" type="text" placeholder="Новосибирск" required />
+            </div>
+            <div class="form-group">
+              <label>Изображение</label>
+              <input id="projectImage" type="text" placeholder="URL картинки" />
+            </div>
+            <div class="form-group">
+              <label>Краткое описание</label>
+              <textarea id="projectDescription" placeholder="Краткая характеристика проекта"></textarea>
+            </div>
+            <button type="submit" class="button button--primary button--full">Добавить проект</button>
+          </form>
+        </div>
+
+        <div class="admin-card admin-list-card">
+          <h2>Текущие проекты</h2>
+          <div id="adminProjectList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+          <span class="footer-logo__symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <strong>Строй</strong>портал
+        </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html">Главная</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

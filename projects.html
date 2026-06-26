@@ -34,7 +34,7 @@
         <a href="projects.html">Проекты</a>
         <a href="client.html">Клиентам</a>
         <a href="#">Строительные компании</a>
-        <a href="#">О портале</a>
+        <a href="about.html">О портале</a>
         <a href="blog.html">Блог</a>
       </nav>
       <div class="header-actions">
@@ -49,7 +49,7 @@
       <a href="index.html">Главная</a>
       <a href="projects.html">Проекты</a>
       <a href="#">Строительные компании</a>
-      <a href="#">О портале</a>
+      <a href="about.html">О портале</a>
       <a href="blog.html">Блог</a>
     </nav>
   </div>
@@ -59,7 +59,10 @@
       <div class="container">
         <div class="breadcrumb">Главная &gt; <strong>Проекты в Новосибирске</strong></div>
         <div class="page-title-row">
-          <h1>Проекты</h1>
+          <div>
+            <h1>Проекты</h1>
+            <p class="section__text">Выбирайте готовые проекты и управляйте каталогом через админку.</p>
+          </div>
           <div class="project-region-links">
             <a href="#">Новосибирск</a>
             <a href="#">+100 км</a>
@@ -68,11 +71,14 @@
             <a href="#">Другой город</a>
           </div>
         </div>
-        <form class="filter-panel">
+        <div class="admin-link-row">
+          <a href="admin.html" class="button button--outline">Кабинет администратора</a>
+        </div>
+        <form class="filter-panel" id="projectFilters">
           <div class="filter-row">
             <label>
               Тип
-              <select>
+              <select id="filterType">
                 <option>Любой</option>
                 <option>Жилой дом</option>
                 <option>Коттедж</option>
@@ -81,7 +87,7 @@
             </label>
             <label>
               Размер от
-              <select>
+              <select id="filterAreaFrom">
                 <option>Любой</option>
                 <option>до 100 м²</option>
                 <option>100–200 м²</option>
@@ -89,7 +95,7 @@
             </label>
             <label>
               до
-              <select>
+              <select id="filterAreaTo">
                 <option>Любой</option>
                 <option>до 150 м²</option>
                 <option>до 250 м²</option>
@@ -97,7 +103,7 @@
             </label>
             <label>
               Этажность
-              <select>
+              <select id="filterFloors">
                 <option>Любая</option>
                 <option>1 этаж</option>
                 <option>2 этажа</option>
@@ -107,7 +113,7 @@
           <div class="filter-row">
             <label>
               Цена от
-              <select>
+              <select id="filterPriceFrom">
                 <option>Любая</option>
                 <option>от 1 000 000</option>
                 <option>от 2 000 000</option>
@@ -115,7 +121,7 @@
             </label>
             <label>
               до
-              <select>
+              <select id="filterPriceTo">
                 <option>Любая</option>
                 <option>до 2 500 000</option>
                 <option>до 4 000 000</option>
@@ -123,7 +129,7 @@
             </label>
             <label>
               Площадь от
-              <select>
+              <select id="filterAreaExact">
                 <option>Любая</option>
                 <option>от 50 м²</option>
                 <option>от 100 м²</option>
@@ -131,7 +137,7 @@
             </label>
             <label>
               Кол-во комнат
-              <select>
+              <select id="filterRooms">
                 <option>Любое</option>
                 <option>2</option>
                 <option>3</option>
@@ -140,8 +146,8 @@
             </label>
           </div>
           <div class="filter-actions">
-            <button type="button" class="button button--secondary">Показать</button>
-            <button type="button" class="button button--text">Расширенный поиск</button>
+            <button type="button" class="button button--secondary" id="applyFilters">Показать</button>
+            <button type="button" class="button button--text" id="resetFilters">Сбросить</button>
           </div>
         </form>
       </div>
@@ -149,82 +155,7 @@
 
     <section class="section">
       <div class="container">
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-card__image"></div>
-            <div class="project-card__body">
-              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
-              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
-              <div class="project-card__footer">
-                <span>от 3 000 000 руб.</span>
-                <button class="project-card__button">В избранное</button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="pagination">
-          <a href="#" class="pagination__item pagination__item--active">1</a>
-          <a href="#" class="pagination__item">2</a>
-          <a href="#" class="pagination__item">3</a>
-          <a href="#" class="pagination__item">...</a>
-          <a href="#" class="pagination__item">8</a>
-        </div>
+        <div class="project-grid" id="projectGrid"></div>
       </div>
     </section>
   </main>
@@ -246,7 +177,7 @@
       <div class="footer-links">
         <a href="projects.html">Проекты</a>
         <a href="#">Строительные компании</a>
-        <a href="#">О портале</a>
+        <a href="about.html">О портале</a>
         <a href="blog.html">Блог</a>
       </div>
       <div class="footer-support">
