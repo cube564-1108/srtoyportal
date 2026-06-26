@@ -482,6 +482,7 @@ button {
 
 .auth-panel {
   padding: 80px 0;
+  background: var(--surface-strong);
 }
 
 .auth-card {
@@ -489,17 +490,26 @@ button {
   border: 1px solid var(--border);
   border-radius: 28px;
   box-shadow: 0 28px 70px rgba(49, 82, 119, 0.08);
+  overflow: hidden;
 }
 
 .auth-card--tabs {
-  max-width: 760px;
-  padding: 40px;
+  max-width: 680px;
+  padding: 36px;
   margin: 0 auto;
 }
 
 .auth-card__header {
   display: grid;
-  gap: 18px;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.auth-card__header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .auth-tabs {
@@ -540,14 +550,17 @@ button {
 
 .auth-form {
   display: grid;
-  gap: 18px;
+  gap: 20px;
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
 }
 
 .form-group label {
-  display: block;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 8px;
 }
 
 .form-group input,
@@ -558,6 +571,16 @@ button {
   border: 1px solid #dce3eb;
   background: var(--surface-strong);
   color: var(--text);
+}
+
+.form-group select {
+  appearance: none;
+}
+
+.auth-form button {
+  min-height: 56px;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .form-group select {
