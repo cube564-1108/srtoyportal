@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стройпортал — строительные компании</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
+      <div class="topbar__actions">
+        <a href="contractor-account.html" class="topbar__link">Войти в личный кабинет</a>
+        <span class="topbar__divider"></span>
+        <a href="#" class="topbar__link">Избранное</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#add-project" class="button button--primary">Добавить проект</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="companies.html">Строительные компании</a>
+      <a href="#">О портале</a>
+      <a href="blog.html">Блог</a>
+  <main>
+    <section class="section section--white">
+      <div class="container">
+        <div class="breadcrumb">Главная &gt; <strong>Строительные компании</strong></div>
+        <div class="page-title-row">
+          <h1>Строительные компании</h1>
+          <div class="project-region-links">
+            <a href="#">Новосибирск</a>
+            <a href="#">+100 км</a>
+            <a href="#">+200 км</a>
+            <a href="#">Все города</a>
+            <a href="#">Другой город</a>
+          </div>
+        </div>
+        <div class="builder-grid builder-grid--full">
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Архитектурная строительная компания «БауХАУС»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Торгово-строительная компания «ЕвроПрофиль»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Архитектурная строительная компания «БауХАУС»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Торгово-строительная компания «ЕвроПрофиль»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Архитектурная строительная компания «БауХАУС»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Торгово-строительная компания «ЕвроПрофиль»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+        </div>
+        <div class="pagination">
+          <a href="#" class="pagination__item pagination__item--active">1</a>
+          <a href="#" class="pagination__item">2</a>
+          <a href="#" class="pagination__item">3</a>
+          <a href="#" class="pagination__item">...</a>
+          <a href="#" class="pagination__item">5</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+        <span class="footer-logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong>Строй</strong>портал
+      </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+        <a href="#" class="button button--outline">Возникли вопросы?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

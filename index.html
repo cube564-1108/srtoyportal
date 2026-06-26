@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стройпортал — главная</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
+      <div class="topbar__actions">
+        <a href="contractor-account.html" class="topbar__link">Войти в личный кабинет</a>
+        <span class="topbar__divider"></span>
+        <a href="#" class="topbar__link">Избранное</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#how-it-works">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#about">О портале</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#add-project" class="button button--primary">Добавить проект</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="#how-it-works">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="companies.html">Строительные компании</a>
+      <a href="contractor-account.html" class="mobile-nav__link">Войти в личный кабинет</a>
+      <a href="#" class="mobile-nav__link">Избранное</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Лучшее решение для поиска подрядчика</p>
+          <h1>Лучшая цена на желаемый проект от надежного подрядчика — у нас на сайте</h1>
+          <p class="hero__text">Сравнивайте предложения строительных компаний, находите проверенных подрядчиков и размещайте свои проекты в одном месте.</p>
+          <div class="hero__buttons">
+            <a href="projects.html" class="button button--primary">Найти проект</a>
+            <a href="#add-project" class="button button--secondary">Добавить проект</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="how-it-works">
+      <div class="container">
+        <div class="section__heading">
+          <h2>Как это работает</h2>
+          <p>Сайт помогает клиенту и подрядчику найти друг друга быстро и удобно. Клиент публикует проект, строители предлагают стоимость и сроки.</p>
+        </div>
+        <div class="cards cards--3">
+          <article class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3>Ускоряйте сделки</h3>
+            <p>Привлечение заявок повышает скорость обработки заказов и количество откликов.</p>
+            <a href="#" class="button button--text">Купить премиум</a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📤</div>
+            <h3>Размещайте проекты</h3>
+            <p>Форма подачи позволяет быстро и удобно разместить ваш проект.</p>
+            <a href="#add-project" class="button button--text">Добавить проект</a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon">📍</div>
+            <h3>Ищите на карте</h3>
+            <p>Найдите проекты и подрядчиков в нужном регионе и районе.</p>
+            <a href="#projects" class="button button--text">Найти проект</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <h2>Популярные проекты</h2>
+          <a href="projects.html" class="button button--outline">Все проекты</a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card__image"></div>
+            <div class="project-card__body">
+              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
+              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
+              <div class="project-card__footer">
+                <span>от 3 000 000 руб.</span>
+                <button class="project-card__button">В избранное</button>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__image"></div>
+            <div class="project-card__body">
+              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
+              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
+              <div class="project-card__footer">
+                <span>от 3 000 000 руб.</span>
+                <button class="project-card__button">В избранное</button>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__image"></div>
+            <div class="project-card__body">
+              <a href="#" class="project-card__title">Загородный дом в Зельницево</a>
+              <p class="project-card__meta">Жилой двухэтажный дом, 120 м²</p>
+              <div class="project-card__footer">
+                <span>от 3 000 000 руб.</span>
+                <button class="project-card__button">В избранное</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="builders">
+      <div class="container">
+        <div class="section__header">
+          <h2>Популярные строители</h2>
+          <a href="companies.html" class="button button--outline">Все строители</a>
+        </div>
+        <div class="builder-grid">
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Архитектурная строительная компания «БауХАУС»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Торгово-строительная компания «ЕвроПрофиль»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+          <article class="builder-card">
+            <div class="builder-card__logo">🏗</div>
+            <div>
+              <a href="#" class="builder-card__title">Архитектурная строительная компания «БауХАУС»</a>
+              <p class="builder-card__address">Новосибирск, ул. Космическая, 129, офис 132</p>
+            </div>
+            <div class="builder-card__rating">★★★★★</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="about">
+      <div class="container contact-section__inner">
+        <div class="contact-card">
+          <h2>Нужна помощь? Оставьте контакт</h2>
+          <form class="contact-form">
+            <label>
+              Введите Ваше имя
+              <input type="text" placeholder="Введите Ваше имя" />
+            </label>
+            <label>
+              Введите Ваш e-mail
+              <input type="email" placeholder="Введите Ваш e-mail" />
+            </label>
+            <button type="submit" class="button button--primary">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section__header">
+          <h2>Новости</h2>
+          <a href="blog.html" class="button button--outline">Перейти в блог</a>
+        </div>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-card__image"></div>
+            <div class="news-card__content">
+              <span class="news-card__date">15 мая</span>
+              <a href="#" class="news-card__title">В Китае построили самый высокий паркинг</a>
+              <p>Самый высокий паркинг в мире построен в китайском городе Тяньцзинь.</p>
+            </div>
+          </article>
+          <article class="news-card">
+            <div class="news-card__image"></div>
+            <div class="news-card__content">
+              <span class="news-card__date">15 мая</span>
+              <a href="#" class="news-card__title">Контролировать строительные работы теперь могут инженеры</a>
+              <p>Новые технологии позволяют лучше отслеживать качество и сроки строительства.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+        <span class="footer-logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong>Строй</strong>портал
+      </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+        <a href="#" class="button button--outline">Возникли вопросы?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

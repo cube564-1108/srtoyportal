@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Стройпортал — личный кабинет подрядчика</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__location">Строительные проекты и подрядчики в <a href="#">Новосибирске</a></div>
+      <div class="topbar__actions">
+        <a href="contractor-account.html" class="topbar__link">Войти в личный кабинет</a>
+        <span class="topbar__divider"></span>
+        <a href="#" class="topbar__link">Избранное</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="logo__text"><strong>Строй</strong>портал</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Главная</a>
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="button button--primary">Добавить проект</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-nav">
+      <a href="index.html">Главная</a>
+      <a href="projects.html">Проекты</a>
+      <a href="companies.html">Строительные компании</a>
+      <a href="#">О портале</a>
+      <a href="blog.html">Блог</a>
+  <main>
+    <section class="section section--white">
+      <div class="container">
+        <div class="breadcrumb">Главная &gt; Личный кабинет подрядчика</div>
+        <h1>Личный кабинет подрядчика</h1>
+        <div class="account-tabs">
+          <a href="#" class="account-tab account-tab--active">Данные о компании</a>
+          <a href="#" class="account-tab">Смена пароля</a>
+          <a href="#" class="account-tab">Лицевой счет компании</a>
+          <a href="#" class="account-tab">Услуги</a>
+          <a href="#" class="account-tab">Проекты</a>
+          <a href="#" class="account-tab">Акции</a>
+          <a href="#" class="account-tab">Отзывы о компании</a>
+          <a href="#" class="account-tab">Рейтинг</a>
+        </div>
+
+        <div class="account-grid">
+          <aside class="account-sidebar">
+            <button class="button button--primary button--full">Обратная связь</button>
+            <div class="account-sidebar__info">
+              <p class="account-sidebar__label">Статус</p>
+              <p class="account-sidebar__value">Проверенный подрядчик</p>
+            </div>
+            <div class="account-sidebar__info">
+              <p class="account-sidebar__label">Проектов</p>
+              <p class="account-sidebar__value">24</p>
+            </div>
+            <div class="account-sidebar__info">
+              <p class="account-sidebar__label">Рейтинг</p>
+              <p class="account-sidebar__value">4.9 / 5</p>
+            </div>
+          </aside>
+
+          <section class="account-card">
+            <div class="account-card__section">
+              <div class="account-card__row">
+                <label>Полное название компании</label>
+                <input type="text" value="Общество с ограниченной ответственностью 'Строительный комбинат'" />
+              </div>
+              <div class="account-card__row">
+                <label>Сокращенное название компании</label>
+                <div class="account-row-inline">
+                  <input type="text" value="ООО 'Строительный комбинат'" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>Логотип</label>
+                <div class="account-logo-preview">NEFCO</div>
+                <button class="button button--text">Изменить</button>
+              </div>
+              <div class="account-card__row">
+                <label>Адрес</label>
+                <div class="account-row-inline">
+                  <input type="text" value="630090, г. Новосибирск, ул. Окружная, д. 4, первый этаж" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>Телефоны</label>
+                <div class="account-row-inline">
+                  <input type="text" value="+7 (123) 657-55-21" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>E-mail</label>
+                <div class="account-row-inline">
+                  <input type="text" value="info@mail.ru" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>Сайт</label>
+                <div class="account-row-inline">
+                  <input type="text" value="www.bauhaus.ru" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>Ссылки на группы в соц. сетях</label>
+                <div class="account-row-inline">
+                  <input type="text" value="ссылка1, ссылка2" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>ФИО руководителя компании</label>
+                <div class="account-row-inline">
+                  <input type="text" value="Анатольев Константин Сергеевич" />
+                  <button class="button button--text">Изменить</button>
+                </div>
+              </div>
+              <div class="account-card__row">
+                <label>Банковские реквизиты</label>
+                <textarea readonly>ИНН 31 231302411
+КПП 313201302
+ОГРН 112312010777
+Банк: Белгородский филиал АБ «РОССИЯ» г. Белгород
+БИК: 041408855
+Р/счет 40702810900000027777
+К/счет 30101810800000000777
+Генеральный директор: Костин Сергей Александрович</textarea>
+              </div>
+              <div class="account-card__row">
+                <label>Описание компании</label>
+                <textarea>Компания «Стройкомбинат» успешно функционирует на рынке строительных услуг с 1997 года. Основной миссией компании является качественное строительство коттеджей и ремонт квартир, возведение и отделка жилых домов в Новосибирской области.</textarea>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <div class="footer-logo">
+        <span class="footer-logo__symbol" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 10l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M8 20v-5h3v5M13 20v-8h3v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong>Строй</strong>портал
+      </div>
+        <p>© 2026 Стройпортал</p>
+      </div>
+      <div class="footer-links">
+        <a href="projects.html">Проекты</a>
+        <a href="companies.html">Строительные компании</a>
+        <a href="#">О портале</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-support">
+        <p>Служба поддержки:</p>
+        <a href="tel:+71235475959">+7 (123) 547-59-59</a>
+        <a href="#" class="button button--outline">Возникли вопросы?</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
