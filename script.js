@@ -30,6 +30,7 @@ if (authTabs.length && authPanels.length) {
 }
 
 const PROJECT_STORAGE_KEY = 'stroyportal_projects';
+let editProjectId = null;
 
 const defaultProjects = [
   {
@@ -105,7 +106,7 @@ function renderProjects(projects) {
     <article class="project-card">
       <div class="project-card__image" style="background-image: url('${project.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'}')"></div>
       <div class="project-card__body">
-        <a href="#" class="project-card__title">${project.title}</a>
+        <a href="project.html?id=${project.id}" class="project-card__title">${project.title}</a>
         <p class="project-card__meta">${project.type}, ${project.area} м², ${project.rooms} комн., ${project.floors} эт.</p>
         <p class="project-card__meta">${project.city}</p>
         <p class="project-card__description">${project.description || 'Описание проекта отсутствует.'}</p>
@@ -167,6 +168,108 @@ function resetFilters() {
   applyFilters();
 }
 
+function getQueryParam(name) {
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
+}
+
+function setAdminFormMode(editing) {
+  const submitButton = document.getElementById('projectSubmitButton');
+  const cancelButton = document.getElementById('cancelEdit');
+
+  if (submitButton) {
+    submitButton.textContent = editing ? 'Сохранить изменения' : 'Добавить проект';
+  }
+  if (cancelButton) {
+    cancelButton.style.display = editing ? 'inline-flex' : 'none';
+  }
+}
+
+function resetAdminForm() {
+  const form = document.getElementById('projectForm');
+  if (form) form.reset();
+  editProjectId = null;
+  const projectIdField = document.getElementById('projectId');
+  if (projectIdField) projectIdField.value = '';
+  document.getElementById('projectImageData').value = '';
+  const fileInput = document.getElementById('projectImageFile');
+  if (fileInput) fileInput.value = '';
+  setAdminFormMode(false);
+}
+
+function populateAdminForm(project) {
+  editProjectId = project.id;
+  document.getElementById('projectId').value = project.id;
+  document.getElementById('projectTitle').value = project.title;
+  document.getElementById('projectType').value = project.type;
+  document.getElementById('projectArea').value = project.area;
+  document.getElementById('projectPrice').value = project.price;
+  document.getElementById('projectCity').value = project.city;
+  document.getElementById('projectDescription').value = project.description;
+  const imageInput = document.getElementById('projectImage');
+  const imageDataInput = document.getElementById('projectImageData');
+  if (project.image && project.image.startsWith('data:')) {
+    if (imageInput) imageInput.value = '';
+    if (imageDataInput) imageDataInput.value = project.image;
+  } else {
+    if (imageInput) imageInput.value = project.image;
+    if (imageDataInput) imageDataInput.value = '';
+  }
+  const fileInput = document.getElementById('projectImageFile');
+  if (fileInput) fileInput.value = '';
+  setAdminFormMode(true);
+}
+
+function renderProjectDetail(project) {
+  const detail = document.getElementById('projectDetail');
+  const breadcrumb = document.getElementById('projectBreadcrumb');
+  const title = document.getElementById('projectTitle');
+  const subtitle = document.getElementById('projectSubtitle');
+
+  if (!detail || !project) {
+    if (detail) {
+      detail.innerHTML = '<div class="empty-state">Проект не найден. Вернитесь к списку проектов.</div>';
+    }
+    return;
+  }
+
+  if (breadcrumb) breadcrumb.textContent = project.title;
+  if (title) title.textContent = project.title;
+  if (subtitle) subtitle.textContent = `${project.type}, ${project.area} м², ${project.city}`;
+
+  detail.innerHTML = `
+    <article class="article-layout project-detail">
+      <div class="project-detail__image" style="background-image: url('${project.image}')"></div>
+      <div class="article-content">
+        <div>
+          <p class="project-detail__price">от ${formatPrice(project.price)} руб.</p>
+          <p class="project-detail__description">${project.description || 'Описание проекта отсутствует.'}</p>
+        </div>
+        <div class="project-detail__specs">
+          <div class="project-detail__spec-item"><strong>Тип:</strong> ${project.type}</div>
+          <div class="project-detail__spec-item"><strong>Площадь:</strong> ${project.area} м²</div>
+          <div class="project-detail__spec-item"><strong>Этажность:</strong> ${project.floors} эт.</div>
+          <div class="project-detail__spec-item"><strong>Комнат:</strong> ${project.rooms}</div>
+          <div class="project-detail__spec-item"><strong>Город:</strong> ${project.city}</div>
+        </div>
+        <div class="project-detail__actions">
+          <a href="projects.html" class="button button--outline">Вернуться к проектам</a>
+          <button class="button button--primary">В избранное</button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function initProjectDetailPage() {
+  if (!document.getElementById('projectDetail')) return;
+
+  const projectId = Number(getQueryParam('id')) || 1;
+  const projects = loadProjects();
+  const project = projects.find((item) => item.id === projectId) || projects[0];
+  renderProjectDetail(project);
+}
+
 function renderAdminList() {
   const list = document.getElementById('adminProjectList');
   if (!list) return;
@@ -178,7 +281,10 @@ function renderAdminList() {
         <strong>${project.title}</strong>
         <p>${project.type}, ${project.area} м², ${project.rooms} комн., ${project.floors} эт., ${project.city}</p>
       </div>
-      <button class="button button--outline admin-remove" data-id="${project.id}">Удалить</button>
+      <div class="admin-item-actions">
+        <button class="button button--outline admin-edit" data-id="${project.id}">Редактировать</button>
+        <button class="button button--outline admin-remove" data-id="${project.id}">Удалить</button>
+      </div>
     </div>
   `).join('');
 
@@ -191,9 +297,26 @@ function renderAdminList() {
       applyFilters();
     });
   });
+
+  list.querySelectorAll('.admin-edit').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      const projectId = Number(event.target.dataset.id);
+      const project = loadProjects().find((item) => item.id === projectId);
+      if (project) populateAdminForm(project);
+    });
+  });
 }
 
-function addProjectFromAdmin(event) {
+async function readFileAsDataURL(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+async function addProjectFromAdmin(event) {
   if (event) event.preventDefault();
 
   const title = document.getElementById('projectTitle')?.value.trim();
@@ -201,7 +324,9 @@ function addProjectFromAdmin(event) {
   const area = parseNumber(document.getElementById('projectArea')?.value) || 0;
   const price = parseNumber(document.getElementById('projectPrice')?.value) || 0;
   const city = document.getElementById('projectCity')?.value.trim();
-  const image = document.getElementById('projectImage')?.value.trim();
+  const urlImage = document.getElementById('projectImage')?.value.trim();
+  const imageFile = document.getElementById('projectImageFile')?.files?.[0];
+  const existingImageData = document.getElementById('projectImageData')?.value.trim();
   const description = document.getElementById('projectDescription')?.value.trim();
 
   if (!title || !type || !area || !price || !city) {
@@ -209,9 +334,23 @@ function addProjectFromAdmin(event) {
     return;
   }
 
+  let image = urlImage;
+  if (imageFile) {
+    try {
+      image = await readFileAsDataURL(imageFile);
+    } catch (error) {
+      console.error('Ошибка чтения файла изображения:', error);
+      alert('Не удалось загрузить файл изображения.');
+      return;
+    }
+  }
+
+  if (!image) {
+    image = existingImageData || 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80';
+  }
+
   const projects = loadProjects();
-  const newProject = {
-    id: Date.now(),
+  const projectValues = {
     title,
     type,
     area,
@@ -219,15 +358,26 @@ function addProjectFromAdmin(event) {
     rooms: 4,
     price,
     city,
-    image: image || 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+    image,
     description: description || 'Описание проекта будет добавлено позже.'
   };
 
-  projects.unshift(newProject);
-  saveProjects(projects);
+  if (editProjectId) {
+    const updatedProjects = projects.map((project) => (
+      project.id === editProjectId
+        ? { ...project, ...projectValues }
+        : project
+    ));
+    saveProjects(updatedProjects);
+  } else {
+    const newProject = { id: Date.now(), ...projectValues };
+    projects.unshift(newProject);
+    saveProjects(projects);
+  }
+
   renderAdminList();
   applyFilters();
-  document.getElementById('projectForm')?.reset();
+  resetAdminForm();
 }
 
 function initProjectPage() {
@@ -241,9 +391,11 @@ function initProjectPage() {
 function initAdminPage() {
   if (document.getElementById('projectForm')) {
     document.getElementById('projectForm').addEventListener('submit', addProjectFromAdmin);
+    document.getElementById('cancelEdit')?.addEventListener('click', resetAdminForm);
     renderAdminList();
   }
 }
 
 initProjectPage();
 initAdminPage();
+initProjectDetailPage();

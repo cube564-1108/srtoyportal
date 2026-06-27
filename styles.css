@@ -386,6 +386,52 @@ button {
   cursor: pointer;
 }
 
+.project-detail {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.project-detail__image {
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+}
+
+.project-detail__price {
+  margin: 0 0 16px;
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.project-detail__description {
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.project-detail__specs {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.project-detail__spec-item {
+  background: #f8fbff;
+  padding: 16px;
+  border-radius: 16px;
+  color: var(--text);
+}
+
+.project-detail__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .admin-panel {
   display: grid;
   gap: 24px;

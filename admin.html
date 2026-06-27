@@ -52,6 +52,7 @@
         <div class="admin-card">
           <h2>Новый проект</h2>
           <form id="projectForm" class="auth-form admin-form">
+            <input id="projectId" type="hidden" />
             <div class="form-group">
               <label>Название проекта</label>
               <input id="projectTitle" type="text" placeholder="Например, Загородный дом в Зельцовке" required />
@@ -81,10 +82,19 @@
               <input id="projectImage" type="text" placeholder="URL картинки" />
             </div>
             <div class="form-group">
+              <label>Загрузить фото проекта</label>
+              <input id="projectImageFile" type="file" accept="image/*" />
+              <input id="projectImageData" type="hidden" />
+              <p class="field-note">Если выбран файл, он будет использован вместо ссылки.</p>
+            </div>
+            <div class="form-group">
               <label>Краткое описание</label>
               <textarea id="projectDescription" placeholder="Краткая характеристика проекта"></textarea>
             </div>
-            <button type="submit" class="button button--primary button--full">Добавить проект</button>
+            <div class="admin-form-actions">
+              <button type="submit" id="projectSubmitButton" class="button button--primary button--full">Добавить проект</button>
+              <button type="button" id="cancelEdit" class="button button--text" style="display:none;">Отменить</button>
+            </div>
           </form>
         </div>
 
